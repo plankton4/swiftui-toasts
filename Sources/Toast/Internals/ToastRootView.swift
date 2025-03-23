@@ -26,7 +26,7 @@ internal struct ToastRootView: View {
                 opacity: 0.0
               ),
               identity: TransformModifier(
-                yOffset: 0,
+                yOffset: -60,
                 scale: 1.0,
                 opacity: 1.0
               )

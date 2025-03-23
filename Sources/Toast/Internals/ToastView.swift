@@ -44,7 +44,10 @@ internal struct ToastView: View {
         Color.clear
           .frame(width: 14)
       }
+
       Text(model.message)
+        ._foregroundColor(Color.toastTextColor)
+
       if let button = model.button {
         buttonView(button)
           .padding([.top, .bottom, .trailing], 10)
