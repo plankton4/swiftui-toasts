@@ -28,10 +28,10 @@ internal struct ToastView: View {
         .id(model.message)
     }
     .frame(height: 48)
+    .frame(maxWidth: UIScreen.main.bounds.size.width - 32)
     .fixedSize(horizontal: true, vertical: false)
     .compositingGroup()
     .shadow(color: .primary.opacity(isDark ? 0.0 : 0.1), radius: 16, y: 8.0)
-    .frame(maxWidth: .infinity)
   }
 
   private var main: some View {
@@ -45,7 +45,9 @@ internal struct ToastView: View {
           .frame(width: 14)
       }
 
-      Text(model.message)
+      Text(LocalizedStringKey(model.message))
+        .font(.callout)
+        .lineLimit(1)
         ._foregroundColor(Color.toastTextColor)
 
       if let button = model.button {
